@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "23113989071",
+    "project_id": "jai-shree-ganesh-textile",
+    "storage_bucket": "jai-shree-ganesh-textile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23113989071:android:9c9a709e6dc460c43970ba",
+        "android_client_info": {
+          "package_name": "com.rishichandak.jaishreeganeshtextile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23113989071-dilcbsheppup58g83juqobk7vl5gmurc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rishichandak.jaishreeganeshtextile",
+            "certificate_hash": "10f2673b88d57b03ef3422265709eef6bd88e601"
+          }
+        },
+        {
+          "client_id": "23113989071-2gg5bkbbnk4p02cmch4qn8fr3ltqefp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgpzohkCiFaPunhl-GkuCN8WkOOaXN_vE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23113989071-2gg5bkbbnk4p02cmch4qn8fr3ltqefp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/menu_dashboard_icon" />
+
+        <item
+            android:id="@+id/nav_cart"
+            android:title="@string/your_cart"
+            android:icon="@drawable/menu_cart_icon" />
+
+    </group>
+
+    <!-- Title -->
+    <item android:title="Profile">
+        <!-- As group can be placed only inside a menu -->
+        <menu>
+            <group
+                android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_settings"
+                    android:title="@string/settings"
+                    android:icon="@drawable/menu_settings_icon" />
+
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/menu_logout_icon" />
+
+                <item
+                    android:id="@+id/nav_search"
+                    android:title="@string/search"
+                    android:icon="@drawable/menu_search_icon"/>
+
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="Share">
+        <!-- As group can be placed only inside a menu -->
+        <menu>
+
+            <!-- Here we'll not have single checkable as we do not want to go to any activity but to open a popup  -->
+            <group
+                android:checkableBehavior="none">
+
+                <item
+                    android:id="@+id/share"
+                    android:title="@string/share"
+                    android:icon="@drawable/menu_share_icon" />
+
+                <item
+                    android:id="@+id/rate_us"
+                    android:title="@string/rate_us"
+                    android:icon="@drawable/menu_rate_us_icon" />
+
+            </group>
+        </menu>
+
+    </item>
+
+</menu>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User.UserDashboard"
+    android:id="@+id/drawer_layout"
+    android:orientation="vertical">
+
+    <!-- For the drawer layout, we need a navigation view -->
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightWhite"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/menu_header"
+        app:menu="@menu/main_menu"
+        android:id="@+id/navigation_view"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content"
+        android:orientation="vertical"
+        android:background="@color/home_background">
+
+        <!-- Top Bar Section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/white">
+
+            <!-- Image View for Menu Icon -->
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/menu_icon"
+                android:layout_centerVertical="true"
+                android:id="@+id/menu_icon"/>
+
+            <!-- Image View for Ganesh Icon -->
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/lord_ganesh_icon"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <!-- Image View for Add Missing Places Icon -->
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/open_cart"
+                android:src="@drawable/shopping_cart"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:background="#ffe9ec">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/categories_recycler"/>
+
+        </LinearLayout>
+
+        <!-- Floating Action Button -->
+        <!--
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:background="#00000000"
+            app:srcCompat="@android:drawable/ic_dialog_email"/>
+        -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_menu"
+            android:scrollbars="vertical">
+
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
