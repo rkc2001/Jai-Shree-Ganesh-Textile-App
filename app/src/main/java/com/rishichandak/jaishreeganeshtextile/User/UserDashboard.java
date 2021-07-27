@@ -7,9 +7,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,6 +23,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -28,6 +31,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rishichandak.jaishreeganeshtextile.Admin.AdminMaintainProductsActivity;
+import com.rishichandak.jaishreeganeshtextile.BuildConfig;
 import com.rishichandak.jaishreeganeshtextile.Common.CartActivity;
 import com.rishichandak.jaishreeganeshtextile.Common.LoginSignup.RetailerStartUpScreen;
 import com.rishichandak.jaishreeganeshtextile.Common.ProductDetails;
@@ -135,6 +139,26 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
         switch (item.getItemId()){
 
+            case R.id.nav_rate_us :
+                Uri uri = Uri.parse("market://details?id=" + getPackageName());
+                Intent myAppLinkToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    startActivity(myAppLinkToMarket);
+                } catch (ActivityNotFoundException e) {
+                    Toast.makeText(this, "Sorry, unable to open Play Store !", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case R.id.nav_share :
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"Jai Shree Ganesh Textile");
+                String shareMessage= "\nHey there, download this application\n\n";
+                shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                startActivity(Intent.createChooser(shareIntent, "Choose One"));
+                break;
+
             case R.id.nav_search :
                 intent = new Intent(getApplicationContext(), SearchProductsActivity.class);
                 startActivity(intent);
@@ -159,6 +183,7 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
                 startActivity(intent);
                 finish();
                 break;
+
         }
 
         return true;
