@@ -199,8 +199,6 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
 
        headerView = navigationView.getHeaderView(0);
 
-//        Log.d("USER HAI KYA - ",Prevalent.currentOnlineUser.toString());
-
         // when user clicks on menu icon
         menuIcon.setOnClickListener(new View.OnClickListener() {
             @Override
